@@ -6,18 +6,17 @@
 </head>
 <body>
 <script>
-    function isEmpty(obj){
-        if ( obj=== ""){
-            return confirm(true);}
-        else { return confirm(false)}
-    }
-    var obj = prompt("Напишите","не пишите");
-
-    isEmpty(obj)
+    function isEmptyObject(obj) {
+    for( k in obj){
+return false;
+}
+return true;
+}
+var obj={"fjakb":"dgahg"};
+isEmptyObject(obj);
 </script>
 <script>
-
-    function pow(x,n){
+ function pow(x,n){
         var result=x;
         for( var i=1; i<n; i++){
             result*=x
@@ -28,10 +27,10 @@
     var x = prompt("x?", '');
     var n = prompt("n?", '');
 
-    if(n<1){
-        alert("это не целое число");}
-    else{
+    if(Number.isInteger(n)){
         alert(pow(x,n));}
+    else{
+       alert("Это не цело число"); }
 
 
 </script>
@@ -48,13 +47,12 @@
     alert(sumTo(n));
 
 </script>
+  <script>
 function sumTo(n){
-if(n<1){
+if(n===1){
 return 1;
 }
-else{
-return sumTo(n-1) + n;
-}
+return +n+ sumTo(n-1) ;
 }
 var n=prompt('введите число','');
 alert(sumTo(n));
