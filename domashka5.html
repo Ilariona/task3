@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+function palindrom(poli){
+var word;
+word=poli.split("").reverse().join("")
+console.log (word);
+if (word===poli){
+console.log ("yes");
+}
+else console.log ("no");
+}
+var poli="дом"
+palindrom(poli);
+</script>
+<script>
+    function anagrama(ana1,ana2){
+        ana1=ana1.split("");
+        ana2=ana2.split("");
+        console.log( ana1, ana2);
+        ana1=ana1.sort();
+        ana2=ana2.sort();
+        console.log( ana1, ana2);
+        var slovo1=ana1.join("");
+        var slovo2=ana2.join("");
+        console.log( slovo1, slovo2);
+        if(slovo1==slovo2){
+            alert("yes");
+        }
+        else {
+            alert("no");
+        }
+    }
+    var ana1=prompt("Введите слово которое хотите сравнить","кот");
+    var ana2=prompt("Введите слово которое хотите сравнить","кто");
+    anagrama(ana1,ana2);
+</script>
+</body>
+</html>
